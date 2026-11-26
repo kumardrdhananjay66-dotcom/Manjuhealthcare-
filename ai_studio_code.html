@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manju Health Care Service | Trusted Home Health Care in Muzaffarpur</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Noto Sans Devanagari for crisp Hindi + English typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for clean medical icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans Devanagari', 'sans-serif'],
+                    },
+                    colors: {
+                        medical: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        trust: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            600: '#059669',
+                            700: '#047857',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        /* Subtle card hover animation */
+        .service-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px -8px rgba(37, 99, 235, 0.15);
+            border-color: #93c5fd;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-medical-100 selection:text-medical-900 pb-20 md:pb-0">
+
+    <!-- Top Quick Contact Number Configuration Bar (Helpful for owner setup, dismissible or editable) -->
+    <div id="configBanner" class="bg-medical-900 text-white text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-trust-600 text-white">
+                    <i class="fa-solid fa-location-dot mr-1"></i> Bhikhanpur, Ahiyapur, Muzaffarpur
+                </span>
+                <span class="hidden sm:inline text-medical-200">|</span>
+                <span id="displayPhoneTop" class="font-medium text-blue-100">Helpline: +91 95764 20388</span>
+            </div>
+            <button onclick="openPhoneModal()" class="text-xs bg-white/15 hover:bg-white/25 text-white px-2.5 py-1 rounded-lg transition flex items-center gap-1.5 cursor-pointer">
+                <i class="fa-solid fa-pen-to-square"></i>
+                <span>Set Your Number</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Sticky Top Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+            <!-- Brand Identity (Medical Cross Icon + Name, No Govt Logos) -->
+            <a href="#" class="flex items-center gap-2.5 group">
+                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-medical-600 to-medical-800 text-white flex items-center justify-center shadow-md shadow-medical-600/20 shrink-0">
+                    <i class="fa-solid fa-hand-holding-medical text-lg sm:text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-base sm:text-lg font-extrabold text-slate-900 leading-tight tracking-tight group-hover:text-medical-700 transition">
+                        Manju Health Care Service
+                    </h1>
+                    <p class="text-[11px] sm:text-xs font-medium text-trust-700 flex items-center gap-1">
+                        <i class="fa-solid fa-circle-check text-[10px]"></i>
+                        <span>होम हेल्थ केयर • मुजफ्फरपुर</span>
+                    </p>
+                </div>
+            </a>
+
+            <!-- Header Action Buttons -->
+            <div class="flex items-center gap-2">
+                <a id="headerCallBtn" href="tel:+919576420388" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-medical-600 hover:bg-medical-700 text-white text-xs sm:text-sm font-semibold shadow-sm transition active:scale-95">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Call Now</span>
+                </a>
+                <a id="headerWhatsappBtn" href="https://wa.me/919576420388?text=Hello%20Manju%20Health%20Care%20Service%2C%20I%20would%20like%20to%20inquire%20about%20home%20health%20care%20services%20in%20Muzaffarpur." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-trust-600 hover:bg-trust-700 text-white text-xs sm:text-sm font-semibold shadow-sm transition active:scale-95">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span class="hidden xs:inline sm:inline">WhatsApp</span>
+                    <span class="hidden md:inline">Inquiry</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Hero Banner Section -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-medical-50 via-white to-slate-50 pt-8 pb-12 sm:pt-14 sm:pb-16 border-b border-slate-200/70">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-5">
+                    <!-- Green Trust Pill -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-trust-50 border border-trust-100 text-trust-700 text-xs sm:text-sm font-semibold shadow-xs">
+                        <span class="w-2 h-2 rounded-full bg-trust-600 animate-pulse"></span>
+                        <span>Verified Home Care • मुजफ्फरपुर में विश्वसनीय स्वास्थ्य सेवा</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <div class="space-y-2">
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+                            Trusted Home Health Care Services in <span class="text-medical-600">Muzaffarpur</span>
+                        </h2>
+                        <p class="text-lg sm:text-xl font-bold text-medical-800">
+                            अब घर बैठे पाएं सुरक्षित नर्सिंग और मेडिकल देखभाल
+                        </p>
+                    </div>
+
+                    <!-- Subheadline -->
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+                        Professional nursing, diagnostics, and patient care at your doorstep in <strong>Bhikhanpur, Ahiyapur & across Muzaffarpur</strong>. Compassionate, hygienic medical support when your family needs it most.
+                    </p>
+
+                    <!-- Clean Green Trust Badges Row -->
+                    <div class="flex flex-wrap gap-2.5 pt-1">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-trust-50 text-trust-700 border border-trust-200/80 text-xs font-semibold">
+                            <i class="fa-solid fa-shield-halved text-trust-600"></i> Hygienic & Safe Care
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-trust-50 text-trust-700 border border-trust-200/80 text-xs font-semibold">
+                            <i class="fa-solid fa-user-nurse text-trust-600"></i> Trained Clinical Staff
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-trust-50 text-trust-700 border border-trust-200/80 text-xs font-semibold">
+                            <i class="fa-solid fa-house-medical text-trust-600"></i> Doorstep Visit in Muzaffarpur
+                        </span>
+                    </div>
+
+                    <!-- Primary Hero Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                        <a href="#booking-section" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-medical-600 hover:bg-medical-700 text-white font-bold text-base shadow-lg shadow-medical-600/25 transition active:scale-95">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>Book Home Visit (होम विजिट बुक करें)</span>
+                        </a>
+                        <a id="heroCallBtn" href="tel:+919576420388" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-medical-50 text-medical-700 border-2 border-medical-200 font-bold text-base shadow-sm transition active:scale-95">
+                            <i class="fa-solid fa-phone-volume text-medical-600"></i>
+                            <span>Call Now</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Card: Quick Summary & Local Trust Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-2xl border border-slate-200/90 shadow-xl shadow-slate-200/50 p-5 sm:p-6 space-y-5">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-medical-600">Patient Care Center</span>
+                                <h3 class="text-lg font-bold text-slate-900 mt-0.5">Manju Health Care Service</h3>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center">
+                                <i class="fa-solid fa-heart-pulse text-2xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3.5 text-sm">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-trust-50 text-trust-600 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-user-doctor"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Led by Raja Kumar (OT Technician)</p>
+                                    <p class="text-xs text-slate-500">अनुभवी मेडिकल टीम द्वारा सुरक्षित देखभाल</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-medical-50 text-medical-600 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Bhikhanpur, Ahiyapur, Muzaffarpur</p>
+                                    <p class="text-xs text-slate-500">Bihar - 842004 • Fast doorstep home visit</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-trust-50 text-trust-600 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Morning to Evening & Urgent Home Visits</p>
+                                    <p class="text-xs text-slate-500">सुबह से शाम तक एवं आवश्यकता अनुसार तुरंत सेवा</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-medical-50/80 rounded-xl p-3.5 border border-medical-100 flex items-center justify-between gap-3">
+                            <div>
+                                <p class="text-xs font-medium text-medical-800">Need immediate nursing or injection at home?</p>
+                                <p class="text-xs font-bold text-slate-900 mt-0.5">सीधे व्हाट्सएप या कॉल पर बात करें</p>
+                            </div>
+                            <a id="cardWhatsappBtn" href="https://wa.me/919576420388?text=Hello%20Manju%20Health%20Care%20Service%2C%20I%20need%20home%20care%20assistance%20in%20Muzaffarpur." target="_blank" rel="noopener noreferrer" class="shrink-0 px-3.5 py-2 rounded-lg bg-trust-600 hover:bg-trust-700 text-white text-xs font-bold shadow-xs transition">
+                                Chat Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Our Home Health Care Services Section -->
+    <section id="services-section" class="py-12 sm:py-16 px-4 max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+            <span class="inline-block px-3 py-1 rounded-full bg-medical-100 text-medical-800 text-xs font-bold tracking-wide uppercase">
+                Our Medical Services • हमारी सेवाएं
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                Our Home Health Care Services
+            </h2>
+            <p class="text-base sm:text-lg font-bold text-medical-700">
+                हमारी प्रमुख होम हेल्थ केयर सेवाएं (घर पर चिकित्सा सुविधा)
+            </p>
+            <p class="text-sm text-slate-600">
+                Select any service below to book a trained healthcare professional at your home in Muzaffarpur.
+            </p>
+        </div>
+
+        <!-- Services Grid (8 Cards) -->
+        <div id="servicesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            <!-- Cards rendered cleanly via JS for consistency and direct booking pre-selection -->
+        </div>
+    </section>
+
+    <!-- 4. Why Choose Us Section -->
+    <section class="py-12 sm:py-16 bg-white border-y border-slate-200/80 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-trust-50 text-trust-700 border border-trust-200 text-xs font-bold uppercase">
+                    <i class="fa-solid fa-award"></i> Why Families Trust Us
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                    Why Choose Manju Health Care Service?
+                </h2>
+                <p class="text-base sm:text-lg font-bold text-medical-700">
+                    हमें ही क्यों चुनें? — मुजफ्फरपुर का भरोसेमंद नाम
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- Pillar 1 -->
+                <div class="rounded-2xl bg-slate-50 border border-slate-200/80 p-5 space-y-3">
+                    <div class="w-11 h-11 rounded-xl bg-medical-100 text-medical-700 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">
+                        Experienced Clinical Leadership
+                    </h3>
+                    <p class="text-xs font-semibold text-trust-700">
+                        अनुभवी नेतृत्व (Raja Kumar - OT Technician)
+                    </p>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Experienced healthcare team led by <strong>Raja Kumar (OT Technician)</strong> ensuring accurate, hospital-grade procedures at home.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="rounded-2xl bg-slate-50 border border-slate-200/80 p-5 space-y-3">
+                    <div class="w-11 h-11 rounded-xl bg-trust-100 text-trust-700 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-pump-medical"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">
+                        Strict Hygienic Protocols
+                    </h3>
+                    <p class="text-xs font-semibold text-trust-700">
+                        पूर्ण स्वच्छता और सुरक्षित उपकरण
+                    </p>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        100% sterile syringes, gloves, and dressing kits used for every single patient visit to prevent any infection.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="rounded-2xl bg-slate-50 border border-slate-200/80 p-5 space-y-3">
+                    <div class="w-11 h-11 rounded-xl bg-medical-100 text-medical-700 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">
+                        Affordable Local Care
+                    </h3>
+                    <p class="text-xs font-semibold text-trust-700">
+                        किफायती और पारदर्शी शुल्क
+                    </p>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Transparent, pocket-friendly home care charges designed for local families in Muzaffarpur without hidden costs.
+                    </p>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="rounded-2xl bg-slate-50 border border-slate-200/80 p-5 space-y-3">
+                    <div class="w-11 h-11 rounded-xl bg-trust-100 text-trust-700 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">
+                        Prompt Doorstep Response
+                    </h3>
+                    <p class="text-xs font-semibold text-trust-700">
+                        तेज और समय पर होम विजिट
+                    </p>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Quick doorstep response across Bhikhanpur, Ahiyapur, Zero Mile, Mithanpura, and nearby Muzaffarpur areas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Quick Home Visit Booking Form Section -->
+    <section id="booking-section" class="py-12 sm:py-16 px-4 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <!-- Left Side: Booking Guidance & Coverage -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="space-y-2">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-medical-100 text-medical-800 text-xs font-bold uppercase">
+                        <i class="fa-solid fa-calendar-check"></i> Quick Appointment
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Book a Home Visit in 60 Seconds
+                    </h2>
+                    <p class="text-base font-bold text-medical-700">
+                        घर पर सेवा के लिए आसान बुकिंग फॉर्म
+                    </p>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Fill out the patient details and submit to send an instant booking request directly to our care team on WhatsApp.
+                    </p>
+                </div>
+
+                <!-- Simple 3-Step Process -->
+                <div class="bg-white rounded-2xl border border-slate-200/90 p-5 space-y-4 shadow-sm">
+                    <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wide flex items-center gap-2">
+                        <i class="fa-solid fa-route text-medical-600"></i>
+                        How It Works • सेवा प्रक्रिया
+                    </h3>
+                    <div class="space-y-3.5 text-sm">
+                        <div class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-medical-600 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
+                            <div>
+                                <p class="font-semibold text-slate-900">Select Service & Location</p>
+                                <p class="text-xs text-slate-500">आवश्यक सेवा और मुजफ्फरपुर में अपना पता चुनें</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-medical-600 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
+                            <div>
+                                <p class="font-semibold text-slate-900">Instant Confirmation Call</p>
+                                <p class="text-xs text-slate-500">हमारी टीम समय और शुल्क की पुष्टि के लिए तुरंत कॉल करेगी</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-trust-600 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
+                            <div>
+                                <p class="font-semibold text-slate-900">Staff Arrives at Your Doorstep</p>
+                                <p class="text-xs text-slate-500">प्रशिक्षित स्टाफ सुरक्षित किट के साथ आपके घर पहुंचेगा</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Areas Covered Box -->
+                <div class="bg-trust-50/70 rounded-2xl border border-trust-200/80 p-5 space-y-3">
+                    <h3 class="text-sm font-bold text-trust-700 flex items-center gap-2">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        Service Areas in Muzaffarpur • कार्य क्षेत्र
+                    </h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2.5 py-1 rounded-md bg-white border border-trust-200 text-xs font-medium text-slate-700">Bhikhanpur</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white border border-trust-200 text-xs font-medium text-slate-700">Ahiyapur</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white border border-trust-200 text-xs font-medium text-slate-700">Zero Mile</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white border border-trust-200 text-xs font-medium text-slate-700">SKMCH Road</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white border border-trust-200 text-xs font-medium text-slate-700">Mithanpura</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white border border-trust-200 text-xs font-medium text-slate-700">Kalyani & Motijheel</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white border border-trust-200 text-xs font-medium text-slate-700">Bhagwanpur</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white border border-trust-200 text-xs font-medium text-slate-700">Saraiyaganj</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Interactive Booking Form Card -->
+            <div class="lg:col-span-7">
+                <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="bg-white rounded-2xl border border-slate-200 shadow-xl shadow-slate-200/50 p-5 sm:p-8 space-y-5 transition-all">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                        <div>
+                            <h3 class="text-lg sm:text-xl font-extrabold text-slate-900">Home Visit Request Form</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">कृपया मरीज की सही जानकारी भरें</p>
+                        </div>
+                        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-trust-50 text-trust-700 text-xs font-semibold">
+                            <i class="fa-solid fa-lock text-[10px]"></i> Direct WhatsApp
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Patient Name -->
+                        <div>
+                            <label for="patientName" class="block text-xs sm:text-sm font-semibold text-slate-800 mb-1.5">
+                                Patient / Caller Name <span class="text-red-500">*</span>
+                                <span class="block text-[11px] font-normal text-slate-500">मरीज या संपर्ककर्ता का नाम</span>
+                            </label>
+                            <input type="text" id="patientName" required placeholder="e.g., Ramesh Kumar"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-medical-600 focus:border-medical-600 transition">
+                        </div>
+
+                        <!-- Mobile Number -->
+                        <div>
+                            <label for="patientPhone" class="block text-xs sm:text-sm font-semibold text-slate-800 mb-1.5">
+                                Mobile Number <span class="text-red-500">*</span>
+                                <span class="block text-[11px] font-normal text-slate-500">10 अंकों का मोबाइल नंबर</span>
+                            </label>
+                            <input type="tel" id="patientPhone" required pattern="[0-9]{10}" maxlength="10" placeholder="e.g., 9876543210"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-medical-600 focus:border-medical-600 transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Service Needed -->
+                        <div>
+                            <label for="bookingService" class="block text-xs sm:text-sm font-semibold text-slate-800 mb-1.5">
+                                Service Required <span class="text-red-500">*</span>
+                                <span class="block text-[11px] font-normal text-slate-500">आवश्यक सेवा चुनें</span>
+                            </label>
+                            <select id="bookingService" required
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-medical-600 focus:border-medical-600 transition">
+                                <option value="">-- Select a Service --</option>
+                            </select>
+                        </div>
+
+                        <!-- Preferred Time -->
+                        <div>
+                            <label for="visitTime" class="block text-xs sm:text-sm font-semibold text-slate-800 mb-1.5">
+                                Preferred Visit Time <span class="text-red-500">*</span>
+                                <span class="block text-[11px] font-normal text-slate-500">विजिट का समय</span>
+                            </label>
+                            <select id="visitTime" required
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-medical-600 focus:border-medical-600 transition">
+                                <option value="Urgent / As Soon As Possible (तुरंत)">Urgent / As Soon As Possible (तुरंत)</option>
+                                <option value="Morning (7:00 AM - 12:00 PM)">Morning (7:00 AM - 12:00 PM)</option>
+                                <option value="Afternoon (12:00 PM - 4:00 PM)">Afternoon (12:00 PM - 4:00 PM)</option>
+                                <option value="Evening (4:00 PM - 9:00 PM)">Evening (4:00 PM - 9:00 PM)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Address in Muzaffarpur -->
+                    <div>
+                        <label for="patientAddress" class="block text-xs sm:text-sm font-semibold text-slate-800 mb-1.5">
+                            Complete Address / Landmark in Muzaffarpur <span class="text-red-500">*</span>
+                            <span class="block text-[11px] font-normal text-slate-500">मुजफ्फरपुर में पूरा पता व नजदीकी पहचान</span>
+                        </label>
+                        <input type="text" id="patientAddress" required placeholder="e.g., Near Hanuman Mandir, Bhikhanpur, Ahiyapur, Muzaffarpur"
+                            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-medical-600 focus:border-medical-600 transition">
+                    </div>
+
+                    <!-- Optional Notes -->
+                    <div>
+                        <label for="patientNotes" class="block text-xs sm:text-sm font-semibold text-slate-800 mb-1.5">
+                            Patient Condition / Doctor Prescription Note (Optional)
+                            <span class="block text-[11px] font-normal text-slate-500">मरीज की स्थिति या डॉक्टर की पर्ची से संबंधित जानकारी (वैकल्पिक)</span>
+                        </label>
+                        <textarea id="patientNotes" rows="2" placeholder="e.g., Post-surgery dressing needed daily, or IV saline prescribed by doctor..."
+                            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-medical-600 focus:border-medical-600 transition"></textarea>
+                    </div>
+
+                    <!-- Form Submit Buttons -->
+                    <div class="pt-1 flex flex-col sm:flex-row gap-3">
+                        <button type="submit" class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-trust-600 hover:bg-trust-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-trust-600/20 transition active:scale-95 cursor-pointer">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Confirm Booking on WhatsApp (बुक करें)</span>
+                        </button>
+                        <a id="formCallBtn" href="tel:+919576420388" class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-medical-50 hover:bg-medical-100 text-medical-700 border border-medical-200 font-bold text-sm transition active:scale-95">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Call Directly</span>
+                        </a>
+                    </div>
+
+                    <!-- Feedback Message Box -->
+                    <div id="bookingFeedback" class="hidden rounded-xl bg-trust-50 border border-trust-200 p-4 text-xs sm:text-sm text-trust-800">
+                        <div class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-trust-600 text-base mt-0.5"></i>
+                            <div>
+                                <p class="font-bold">WhatsApp booking window opened!</p>
+                                <p class="text-trust-700 mt-0.5">If WhatsApp didn't open automatically, please call us directly on <span id="feedbackPhone" class="font-bold">+91 95764 20388</span>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-900 text-slate-300 pt-12 pb-8 px-4 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-slate-800">
+                <!-- Brand Info -->
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-10 h-10 rounded-xl bg-medical-600 text-white flex items-center justify-center">
+                            <i class="fa-solid fa-hand-holding-medical text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-extrabold text-base">Manju Health Care Service</h3>
+                            <p class="text-xs text-trust-400 font-medium">होम हेल्थ केयर • मुजफ्फरपुर</p>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                        Dedicated to providing hygienic, compassionate, and reliable nursing & home healthcare support across Muzaffarpur, Bihar.
+                    </p>
+                </div>
+
+                <!-- Address & Hours -->
+                <div class="space-y-2.5 text-sm">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider">Contact & Location</h4>
+                    <p class="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
+                        <i class="fa-solid fa-location-dot text-medical-400 mt-1"></i>
+                        <span>Bhikhanpur, Ahiyapur, Muzaffarpur, Bihar - 842004</span>
+                    </p>
+                    <p class="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                        <i class="fa-solid fa-user-doctor text-trust-400"></i>
+                        <span>Lead Caregiver: Raja Kumar (OT Technician)</span>
+                    </p>
+                    <p class="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                        <i class="fa-solid fa-clock text-medical-400"></i>
+                        <span>Daily: 7:00 AM – 9:00 PM (Urgent Visits Available)</span>
+                    </p>
+                </div>
+
+                <!-- Direct Contact Buttons -->
+                <div class="space-y-3">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider">24x7 Inquiry & Support</h4>
+                    <p id="footerPhoneText" class="text-base font-bold text-white">+91 95764 20388</p>
+                    <div class="flex flex-wrap gap-2.5">
+                        <a id="footerCallBtn" href="tel:+919576420388" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-medical-600 hover:bg-medical-700 text-white text-xs font-bold transition">
+                            <i class="fa-solid fa-phone"></i> Call Now
+                        </a>
+                        <a id="footerWhatsappBtn" href="https://wa.me/919576420388" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-trust-600 hover:bg-trust-700 text-white text-xs font-bold transition">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medical Disclaimer & Copyright -->
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 text-center sm:text-left">
+                <p>&copy; <span id="currentYear"></span> Manju Health Care Service, Muzaffarpur. All rights reserved.</p>
+                <p class="text-[11px] text-slate-500 max-w-xl">
+                    Note: We provide home nursing & supportive clinical procedures per doctor prescription. For life-threatening emergencies, please visit the nearest hospital or dial 108.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile Bottom Action Bar (Visible on mobile screens only) -->
+    <div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-3 py-2.5 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+        <div class="grid grid-cols-2 gap-2.5 max-w-md mx-auto">
+            <a id="mobileCallBtn" href="tel:+919576420388" class="inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-medical-600 text-white font-bold text-sm shadow-sm active:scale-95 transition">
+                <i class="fa-solid fa-phone"></i>
+                <span>Call Now</span>
+            </a>
+            <a id="mobileWhatsappBtn" href="https://wa.me/919576420388?text=Hello%20Manju%20Health%20Care%20Service%2C%20I%20need%20home%20health%20care%20in%20Muzaffarpur." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-trust-600 text-white font-bold text-sm shadow-sm active:scale-95 transition">
+                <i class="fa-brands fa-whatsapp text-base"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Phone Number Configuration Modal -->
+    <div id="phoneModal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <h3 id="modalTitle" class="text-lg font-extrabold text-slate-900">Set Helpline & WhatsApp Number</h3>
+                <button onclick="closePhoneModal()" class="w-8 h-8 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 flex items-center justify-center transition cursor-pointer" aria-label="Close modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600">
+                Enter your 10-digit Indian mobile number below. All Call & WhatsApp buttons on this page will update automatically.
+            </p>
+            <form onsubmit="saveCustomPhone(event)" class="space-y-4">
+                <div>
+                    <label for="customPhoneInput" class="block text-xs font-bold text-slate-700 mb-1.5">10-Digit Mobile Number (+91)</label>
+                    <div class="flex items-center">
+                        <span class="px-3 py-2.5 rounded-l-xl bg-slate-100 border border-r-0 border-slate-300 text-sm font-bold text-slate-700">+91</span>
+                        <input type="tel" id="customPhoneInput" required pattern="[0-9]{10}" maxlength="10" placeholder="9576420388"
+                            class="w-full px-3.5 py-2.5 rounded-r-xl border border-slate-300 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-medical-600">
+                    </div>
+                </div>
+                <div class="flex items-center justify-end gap-2 pt-1">
+                    <button type="button" onclick="closePhoneModal()" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition cursor-pointer">
+                        Cancel
+                    </button>
+                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-medical-600 hover:bg-medical-700 text-white text-xs font-bold shadow-sm transition cursor-pointer">
+                        Save & Update Page
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript for Services Rendering, Booking Integration & Number Sync -->
+    <script>
+        const DEFAULT_PHONE = '9576420388';
+        let activePhone = localStorage.getItem('manju_healthcare_phone') || DEFAULT_PHONE;
+
+        // 8 Core Home Health Care Services
+        const services = [
+            {
+                id: 'Injection & IV Drip (इंजेक्शन और स्लाइन)',
+                title: 'Injection & IV Drip (Saline)',
+                hindi: 'इंजेक्शन और स्लाइन / IV ड्रिप',
+                desc: 'Safe IM/IV injections, cannula insertion, and saline drip administration at home per doctor prescription.',
+                icon: 'fa-syringe',
+                color: 'medical'
+            },
+            {
+                id: 'Wound Dressing & Stitch Removal (ड्रेसिंग और टांका)',
+                title: 'Wound Dressing & Stitch Removal',
+                hindi: 'घाव की ड्रेसिंग और टांका कटवाना',
+                desc: 'Sterile surgical dressing, diabetic ulcer care, burn dressing, and painless suture removal by OT technician.',
+                icon: 'fa-kit-medical',
+                color: 'trust'
+            },
+            {
+                id: 'Catheter & Ryle\'s Tube Care (कैथेटर व फीडिंग ट्यूब)',
+                title: 'Catheter & Ryle\'s Tube Care',
+                hindi: 'कैथेटर और राइल्स ट्यूब सेवा',
+                desc: 'Hygienic Foley urinary catheter insertion/replacement and nasogastric (Ryle’s) feeding tube management.',
+                icon: 'fa-notes-medical',
+                color: 'medical'
+            },
+            {
+                id: 'Post-Surgery Care (ऑपरेशन के बाद देखभाल)',
+                title: 'Post-Surgery Recovery Care',
+                hindi: 'ऑपरेशन के बाद की विशेष देखभाल',
+                desc: 'Dedicated post-operative monitoring, drain management, and infection-free wound care at home.',
+                icon: 'fa-bed-pulse',
+                color: 'trust'
+            },
+            {
+                id: 'Blood Sample & Vital Check (ब्लड जांच व BP/शुगर)',
+                title: 'Vitals & Sugar / BP Monitoring',
+                hindi: 'BP, शुगर, ऑक्सीजन और सैंपल जांच',
+                desc: 'Regular Blood Pressure, Blood Sugar, SpO2, Pulse checks, and doorstep blood sample collection support.',
+                icon: 'fa-heart-pulse',
+                color: 'medical'
+            },
+            {
+                id: 'Elderly & Bedridden Care (बुजुर्ग मरीज की देखभाल)',
+                title: 'Elderly & Bedridden Care',
+                hindi: 'बुजुर्ग और बेड-रेस्ट मरीज की सेवा',
+                desc: 'Compassionate nursing support, bedsore prevention, sponge bath assistance, and medication reminders.',
+                icon: 'fa-hand-holding-heart',
+                color: 'trust'
+            },
+            {
+                id: 'Nebulization & Oxygen Support (नेबुलाइजेशन व ऑक्सीजन)',
+                title: 'Nebulization & Oxygen Care',
+                hindi: 'नेबुलाइजेशन और ऑक्सीजन सपोर्ट',
+                desc: 'Home nebulizer therapy for asthma/COPD patients and oxygen cylinder/concentrator setup guidance.',
+                icon: 'fa-lungs',
+                color: 'medical'
+            },
+            {
+                id: 'Home Nursing Visit (होम नर्सिंग विजिट)',
+                title: 'Trained Home Nursing Visit',
+                hindi: 'प्रशिक्षित नर्सिंग होम विजिट',
+                desc: 'Single-visit or scheduled daily nursing care by trained male/female clinical staff across Muzaffarpur.',
+                icon: 'fa-user-nurse',
+                color: 'trust'
+            }
+        ];
+
+        // Render Service Cards & Populate Booking Dropdown
+        function initServices() {
+            const grid = document.getElementById('servicesGrid');
+            const select = document.getElementById('bookingService');
+
+            grid.innerHTML = services.map(service => {
+                const isMedical = service.color === 'medical';
+                const iconBg = isMedical ? 'bg-medical-50 text-medical-600' : 'bg-trust-50 text-trust-600';
+                const btnStyle = isMedical
+                    ? 'text-medical-700 bg-medical-50 hover:bg-medical-600 hover:text-white'
+                    : 'text-trust-700 bg-trust-50 hover:bg-trust-600 hover:text-white';
+
+                return `
+                    <div class="service-card bg-white rounded-2xl border border-slate-200/90 p-5 flex flex-col justify-between gap-4 shadow-xs">
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 rounded-xl ${iconBg} flex items-center justify-center text-xl">
+                                <i class="fa-solid ${service.icon}"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-base leading-snug">${service.title}</h3>
+                                <p class="text-xs font-semibold text-medical-700 mt-0.5">${service.hindi}</p>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                ${service.desc}
+                            </p>
+                        </div>
+                        <button type="button" onclick="selectServiceAndBook('${service.id.replace(/'/g, "\\'")}')"
+                            class="w-full py-2.5 px-3 rounded-xl ${btnStyle} text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer">
+                            <span>Book This Service</span>
+                            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                        </button>
+                    </div>
+                `;
+            }).join('');
+
+            services.forEach(service => {
+                const option = document.createElement('option');
+                option.value = service.id;
+                option.textContent = service.id;
+                select.appendChild(option);
+            });
+
+            // Add "Other / Multiple Services" option
+            const otherOpt = document.createElement('option');
+            otherOpt.value = 'Other / General Consultation (अन्य सेवा)';
+            otherOpt.textContent = 'Other / General Consultation (अन्य सेवा)';
+            select.appendChild(otherOpt);
+        }
+
+        // Pre-select Service & Scroll to Booking Form
+        function selectServiceAndBook(serviceId) {
+            const select = document.getElementById('bookingService');
+            select.value = serviceId;
+
+            const bookingSection = document.getElementById('booking-section');
+            bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            const form = document.getElementById('bookingForm');
+            form.classList.add('ring-2', 'ring-medical-600');
+            setTimeout(() => {
+                form.classList.remove('ring-2', 'ring-medical-600');
+                document.getElementById('patientName').focus({ preventScroll: true });
+            }, 900);
+        }
+
+        // Format Indian Phone Number for Display
+        function formatPhoneDisplay(digits) {
+            return `+91 ${digits.slice(0, 5)} ${digits.slice(5)}`;
+        }
+
+        // Sync Phone Number Across All Links & Text
+        function applyPhoneNumber(digits) {
+            activePhone = digits;
+            const formatted = formatPhoneDisplay(digits);
+            const telHref = `tel:+91${digits}`;
+            const defaultWaMsg = encodeURIComponent('Hello Manju Health Care Service, I would like to inquire about home health care services in Muzaffarpur.');
+            const waHref = `https://wa.me/91${digits}?text=${defaultWaMsg}`;
+
+            // Update Text Elements
+            document.getElementById('displayPhoneTop').textContent = `Helpline: ${formatted}`;
+            document.getElementById('footerPhoneText').textContent = formatted;
+            document.getElementById('feedbackPhone').textContent = formatted;
+
+            // Update Call Links
+            ['headerCallBtn', 'heroCallBtn', 'formCallBtn', 'footerCallBtn', 'mobileCallBtn'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.href = telHref;
+            });
+
+            // Update WhatsApp Links
+            ['headerWhatsappBtn', 'cardWhatsappBtn', 'footerWhatsappBtn', 'mobileWhatsappBtn'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.href = waHref;
+            });
+        }
+
+        // Handle Booking Form Submission via WhatsApp
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('patientName').value.trim();
+            const phone = document.getElementById('patientPhone').value.trim();
+            const service = document.getElementById('bookingService').value;
+            const time = document.getElementById('visitTime').value;
+            const address = document.getElementById('patientAddress').value.trim();
+            const notes = document.getElementById('patientNotes').value.trim();
+
+            const message = [
+                `*New Home Visit Booking - Manju Health Care Service*`,
+                `----------------------------------`,
+                `*Patient / Caller:* ${name}`,
+                `*Mobile:* ${phone}`,
+                `*Service:* ${service}`,
+                `*Preferred Time:* ${time}`,
+                `*Address:* ${address}`,
+                notes ? `*Notes:* ${notes}` : null,
+                `----------------------------------`,
+                `Please confirm availability and charges.`
+            ].filter(Boolean).join('\n');
+
+            const whatsappUrl = `https://wa.me/91${activePhone}?text=${encodeURIComponent(message)}`;
+            document.getElementById('bookingFeedback').classList.remove('hidden');
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        // Modal Controls
+        function openPhoneModal() {
+            document.getElementById('customPhoneInput').value = activePhone;
+            document.getElementById('phoneModal').classList.remove('hidden');
+            document.getElementById('customPhoneInput').focus();
+        }
+
+        function closePhoneModal() {
+            document.getElementById('phoneModal').classList.add('hidden');
+        }
+
+        function saveCustomPhone(event) {
+            event.preventDefault();
+            const input = document.getElementById('customPhoneInput').value.trim();
+            if (/^[0-9]{10}$/.test(input)) {
+                localStorage.setItem('manju_healthcare_phone', input);
+                applyPhoneNumber(input);
+                closePhoneModal();
+            }
+        }
+
+        // Close modal on backdrop click or Escape key
+        document.getElementById('phoneModal').addEventListener('click', function (e) {
+            if (e.target === this) closePhoneModal();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closePhoneModal();
+        });
+
+        // Initialize Page
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            initServices();
+            applyPhoneNumber(activePhone);
+        });
+    </script>
+</body>
+</html>
